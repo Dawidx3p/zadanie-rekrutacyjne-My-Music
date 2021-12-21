@@ -44,9 +44,12 @@ document.querySelector('#submit').addEventListener('click', function(event){
     const errors = [];
     const errorUl = document.createElement('ul');
     errorUl.id = 'errors';
-    if(id.length!==9){
-            errors.push('Numer PESEL musi mieć 9 cyfr'); 
+    if(type==='osoba' &&  id.length!==11){
+            errors.push('Numer PESEL musi mieć 11 cyfr'); 
     }
+    if(type==='firma' &&  id.length!==10){
+        errors.push('Numer NIP musi mieć 10 cyfr'); 
+    }   
     if(preview.width!== preview.height){
             errors.push('Zdjęcie musi być kwadratem');
     }
